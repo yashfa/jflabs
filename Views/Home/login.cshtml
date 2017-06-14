@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "login";
+}
+@{
+    if (IsPost)
+    {
+        Response.Redirect("~/Home/login");
+    }
+
+}
+<!doctype html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Space Science Website Template</title>
+    <link rel="stylesheet" href="~/Content/css/style.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/mobile.css">
+    <script src="~/Content/Scripts/mobile.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <div id="page">
+        <div id="header">
+            <div style="max-width: 1100px">
+                <a href="/Home/index" class="logo"><img src="../../Content/images/logo.png" alt=""></a>
+                <ul id="navigation">
+                    <li>
+                        <a href="/Home/index">Home</a>
+                    </li>
+                    <li>
+                        <a href="/Home/about">About</a>
+                    </li>
+                    <li class="menu">
+                        <a href="/Home/projects">Projects</a>
+
+                    </li>
+                    <li class="menu">
+                        <a href="/Home/blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/Home/contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/Home/videos">Tutorials</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div id="body">
+            <div class="header">
+                <div class="login">
+                    <h1>Login</h1>
+                    <h2>Login for Admin</h2>
+
+
+                    <form action="../home/signin" method="post">
+                        <input type="text" name="username" placeholder="Enter your name" required />
+
+                        <input type="password" name="password" placeholder="Enter your password" value="" required />
+
+                        <button type="submit" class="btn-block" value="submit" onclick="validate()"> LogIn </button> <br/>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="connect">
+                <div>
+                    <h1>FOLLOW OUR  MISSIONS ON</h1>
+                    <div>
+                        <a href="https://www.facebook.com/" class="facebook">facebook</a>
+                        <a href="https://twitter.com/login" class="twitter">twitter</a>
+                        <a href="https://www.google.com.pk/" class="googleplus">googleplus</a>
+                        <a href="https://www.pinterest.com/login/" class="pinterest">pinterest</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footnote">
+                <div>
+                    <p>&copy; 2017 BY JF Labs | ALL RIGHTS RESERVED</p>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+</body>
+</html>

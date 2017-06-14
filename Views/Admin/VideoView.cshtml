@@ -1,0 +1,80 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Main</title>
+    @Html.Partial("PartialPage")
+    <link rel="shortcut icon" href="~/Content/images/49.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body style="font-family:Algerian ;color:white;overflow-x:hidden ;background-image:url('/Content/images/black.jpg');background-repeat:no-repeat;background-size:cover;">
+    <div class="container-fluid">
+
+        @Html.Partial("AdminPartialHeader")
+
+        <h2>List of Videos <br /> <br /> </h2>
+
+        <div class="table-responsive">
+            <table class="table" style="background: #5499C7 ; font-size: 20px; padding: 10px; width: 99%; border-radius: 10px; margin-left: 15px; ">
+
+                <tr>
+                    <td style="padding-left:40px "><br />&nbsp;Video_ID <br /><br /></td>
+                    <td style="padding-left:40px"><br />&nbsp;Admin_Id <br /><br /></td>
+                    <td style="padding-left:40px"><br />&nbsp;Video Name<br /><br /></td>
+                    <td style="padding-left:40px"><br />&nbsp;Description <br /><br /></td>
+                    <td style="padding-left:40px"><br />&nbsp;Video <br /><br /></td>
+
+                    
+                    
+                </tr> 
+
+                <tbody>
+
+                    @foreach (var s in Model)
+                    {
+                        <tr style="border:1px solid black">
+
+                            <td style="padding: 20px; padding-left: 70px; font-family: 'Times New Roman'"> @s.video_Id</td>
+                            <td style="padding: 20px; padding-left: 70px; font-family: 'Times New Roman'"> @s.admin_id</td>
+                            <td style="padding: 20px; padding-left: 70px; font-family: 'Times New Roman'"> @s.video_name</td>
+                            <td style="padding: 20px; padding-left: 70px; font-family: 'Times New Roman' "> @s.video_description</td>
+                            
+                            <td style="padding: 50px; padding-left: 70px; font-family: 'Times New Roman'"> @s.vid</td>
+
+
+
+                            <td>
+
+                                &nbsp; &nbsp; &nbsp; <a href="/Admin/Delete/@s.video_Id" style="color: black">   Delete </a>
+                                &nbsp; &nbsp; &nbsp; <a href="/Admin/Update/@s.video_Id" style="color:  black">   Update </a>
+                                &nbsp; &nbsp; &nbsp;
+                            </td>
+                        </tr>
+
+
+
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+        <!---->
+        <br /><br />
+    </div>
+
+
+
+
+
+    <script src="~/js/bootstrap.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+﻿@model List<JFLabs.Models.video>
+@{
+    ViewBag.Title = "videos";
+}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jf Lab's</title>
+    <link rel="stylesheet" href="~/Content/css/style.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/mobile.css">
+    <script src="~/Content/Scripts/mobile.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<style>
+    .btn-default {
+color: #333;
+background-color: #fff;
+border-color: #ccc;
+}
+
+.btn {
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+font-weight: 400;
+line-height: 1.42857143;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+background-image: none;
+border: 1px solid transparent;
+border-radius: 4px;
+}
+
+#page-content-wrapper {
+width: 100%;
+padding: 15px;
+}
+
+#page-content-wrapper {
+padding: 20px;
+}
+
+.sidebar {
+  list-style-type:none;
+  background-color:#ab000a;
+  width:230px;
+  height:100%;
+  top:60px;
+  bottom:0;
+  left:0;
+  text-align:left;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition:1s ease;
+}
+
+.sidebar a {
+  text-decoration:none;
+  color:white;
+  transition:1s ease;
+}
+
+.sidebar li {
+  text-indent: 20px;
+  line-height: 40px;
+  transition:0.5s ease;
+}
+
+.sidebar li:hover {
+  background-color:#777;
+  cursor:pointer;
+  text-indent: 30px;
+}
+
+.sidebar > .sidebar-brand {
+height: 65px;
+font-size: 22px;
+color: black;
+line-height: 60px;
+}
+#body .header div ul{
+    display: inline-block;
+    width: 100%;
+    list-style: none outside none;
+    margin-left: 32%;
+    padding: 3px 10px 0;
+}
+#body.about .header div, #body .header div{
+    width: 100%;
+}
+</style>
+
+        <div id="header">
+            <div style="max-width: 1100px">
+                <a href="/Home/index" class="logo"><img src="../../Content/images/logo.png" alt=""></a>
+                <ul id="navigation">
+                    <li>
+                        <a href="/Home/index">Home</a>
+                    </li>
+                    <li>
+                        <a href="/Home/about">About</a>
+                    </li>
+                    <li class="menu">
+                        <a href="/Home/projects">Projects</a>
+
+                    </li>
+                    <li class="menu">
+                        <a href="/Home/blog">Blog</a>
+
+                    </li>
+                    <li>
+                        <a href="/Home/contact">Contact</a>
+                    </li>
+                    <li class="selected">
+                        <a href="/Home/videos">Tutorials</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+            <ul class="sidebar">
+                <li class="sidebar-brand"><a href="">Videos Tutorials</a></li>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <li><a href="#" title="@Model[i].video_name" name="@Model[i].vid" id="@Model[i].video_description"  onclick="Description(this)">@Model[i].video_name</a></li>
+                }
+            </ul>
+            <div id="body">
+    <div class="header">
+        <div>
+            <ul>
+                <li id="ShowVideo">
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+            <div id="footer">
+                <div class="connect">
+                    <div>
+                        <h1>FOLLOW OUR  MISSIONS ON</h1>
+                        <div>
+                            <a href="https://www.facebook.com/" class="facebook">facebook</a>
+                            <a href="https://twitter.com/login" class="twitter">twitter</a>
+                            <a href="https://www.google.com.pk/" class="googleplus">googleplus</a>
+                            <a href="https://www.pinterest.com/login/" class="pinterest">pinterest</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footnote">
+                    <div>
+                        <p>&copy; We are JF Lab</p>
+                    </div>
+                </div>
+            </div>
+<script src="jquery.js"></script>
+<script src="mediaelement-and-player.min.js"></script>
+<link rel="stylesheet" href="mediaelementplayer.css" />
+<script>
+    function Description(elem) {
+        var html = "";
+        //html += '<video controls="controls" class="video-stream" x-webkit-airplay="allow" data-youtube-id="N9oxmRT2YWw" src="http://v20.lscache8.c.youtube.com/videoplayback?sparams=id%2Cexpire%2Cip%2Cipbits%2Citag%2Cratebypass%2Coc%3AU0hPRVRMVV9FSkNOOV9MRllD&amp;itag=43&amp;ipbits=0&amp;signature=D2BCBE2F115E68C5FF97673F1D797F3C3E3BFB99.59252109C7D2B995A8D51A461FF9A6264879948E&amp;sver=3&amp;ratebypass=yes&amp;expire=1300417200&amp;key=yt1&amp;ip=0.0.0.0&amp;id=37da319914f6616c"></video>'
+        html += '<iframe width="420" height="345" src="'+elem.name+'"></iframe>'
+        html += '<div>'
+        html += '<h1>' + elem.innerText + '</h1>'
+        html +='<p>'+elem.id+'</p>'
+        html += '</div>'
+        $('#ShowVideo').html(html);
+    }
+</script>
+<script>
+    var player = new MediaElementPlayer('#player1');
+</script>

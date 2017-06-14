@@ -1,0 +1,103 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin_Index</title>
+    @Html.Partial("PartialPage")
+    <link rel="shortcut icon" href="~/Content/images/49.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+
+<body style="font-family:Algerian ;color:white;overflow-x:hidden ;background-image:url('/Content/images/black.jpg');background-repeat:no-repeat;background-size:cover;">
+    <div class="container-fluid">
+
+
+
+        <p style="padding-top:10px;font-size:70px;margin-bottom:0px">  &nbsp; <img src="~/Content/images/logo1.jpg" style="height:70px ; 
+          width:70px" /> JF Lab's  </p> <span style="font-size:20px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;  </span>
+
+        <p style="padding-top:5px;font-size:30px;margin-bottom:0px">  &nbsp; Exploring the future  </p> <span style="font-size:20px;"> 
+               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;  </span>
+
+
+        <nav class="navbar navbar-inverse" style="border:none;background:#f25858;margin-bottom:20px;margin-top:8px;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand active" href="#"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+
+                        <li class="act">
+                        <a href="/Admin/index" style="color: white; font-family: 'Times New Roman'; font-size: 35px" >
+                        <p margin-bottom:5px"></p> <b><span class="glyphicon glyphicon-home"></span>&nbsp;  Home </b></a>
+                        
+                        </li>
+
+                        <li>
+
+                            <a href="/Admin/Add" style="color: white; font-family: 'Times New Roman'; font-size: 30px">
+                            <p style="padding-top:10px"> </p> <b><span style="background:white;color:greenyellow"> </span>&nbsp; Add Video Details </b></a>
+
+                        </li>
+                        
+                        <li>
+                        <a href="/Admin/VideoView" style="color: white; font-family: 'Times New Roman'; font-size: 30px">
+                        <p style="padding-top:10px"> </p> <b><span style="background:white;color:greenyellow"> </span>&nbsp; View Video Details </b></a>
+                        
+                        </li>
+
+                    </ul>
+
+
+                    <ul class="nav navbar-nav navbar-right" style="">
+
+                        <li><a href="/Admin/LogOut" style="color: white; font-family: 'Times New Roman'; font-size: 35px"> <p style="padding-top:10px"> </p><b><span></span> Logout </b> </a></li>
+                    </ul>
+  `
+
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="col-md-12">
+            <br /> <br />
+
+            <div class="col-md-4"></div>
+            <br />  <h2 style="color: white; font-family: Algerian;font-size:40px "> DashBoard @Session["Name"] </h2> <br />
+            <img src="~/content/images/pro.jpg" style="height:250px ; width:250px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="~/content/images/pi1.jpg" style="height:250px ; width:250px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="~/content/images/pi3.jpg" style="height:250px ; width:250px" />
+
+            <div class="col-md-4" style="border-radius:10px">
+
+                <h4> <a href="/Admin/VideoView" style="color: lightcoral; font-family: 'Times New Roman';font-size:30px ; float:left"> View Video Details   </a></h4> <br />
+                
+                <br /><br />
+                <h4> <a href="/Admin/Add" style="color:lightcoral ; font-family: 'Times New Roman';font-size:30px ; float:left">  Add Video Details </a> </h4> <br>
+
+                <br /><br />
+                <h4> <a href="/Admin/Feedback" style="color:lightcoral ; font-family: 'Times New Roman';font-size:30px ; float:left"> View Contact us Members </a> </h4> <br>
+            
+            
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+    </div>
+    <script src="~/js/bootstrap.js" type="text/javascript"></script>
+</body>
+</html>
